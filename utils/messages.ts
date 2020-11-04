@@ -11,7 +11,7 @@ export const fetchToday = async () => {
   const today = new Date(Date.now())
 
   return messages
-    .filter(({ timestamp_ms, content }) => {
+    .filter(({ timestamp_ms }) => {
       const msgDate = new Date(timestamp_ms)
 
       return (
