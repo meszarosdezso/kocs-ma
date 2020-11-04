@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { fetchToday, Message, toHungarian } from '../utils/messages'
+import { fetchToday, Message } from '../utils/messages'
 import { Clipboard } from 'react-feather'
 
 const IndexPage = () => {
@@ -14,7 +14,7 @@ const IndexPage = () => {
 
   const copyMessage = async (text: string | undefined) => {
     if (!text) return
-    await navigator.clipboard.writeText(toHungarian(text))
+    await navigator.clipboard.writeText(text)
     console.log(await navigator.clipboard.readText())
   }
 
@@ -36,9 +36,9 @@ const IndexPage = () => {
       <ul id="messages">
         {messages.map(msg => (
           <li key={msg.timestamp_ms} className="message">
-            <h3 className="sender">{toHungarian(msg.sender_name)}</h3>
+            <h3 className="sender">{msg.sender_name}</h3>
             <p className={msg.content ? 'body' : 'media'}>
-              {toHungarian(msg.content || '[Media]')}
+              {msg.content || '[Media]'}
             </p>
             <Clipboard
               onClick={async _ => {
