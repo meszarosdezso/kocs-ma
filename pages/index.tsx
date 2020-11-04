@@ -25,7 +25,7 @@ const IndexPage = () => {
           {today.toString().substring(3, 7)} {today.getDate()}
         </h4>
 
-        <h1 id="title">kocsMa 🍻</h1>
+        <h1 id="title">KocsMa 🍻</h1>
 
         <p id="disclaimer">
           Másolj ki egy üzenetet, és keress rá messengerben a teljes élményért
