@@ -36,6 +36,12 @@ const IndexPage = () => {
       <ul id="messages">
         {messages.map(msg => (
           <li key={msg.timestamp_ms} className="message">
+            <span className="time">
+              {new Date(msg.timestamp_ms)
+                .toLocaleString()
+                .split(', ')[1]
+                .substring(0, 5)}
+            </span>
             <h3 className="sender">{msg.sender_name}</h3>
             <p className={msg.content ? 'body' : 'media'}>
               {msg.content || '[Media]'}

@@ -9,6 +9,10 @@
   outline: none;
 }
 
+body {
+  padding: 0 1rem;
+}
+
 header {
   margin: 6rem auto;
   text-align: center;
@@ -48,6 +52,12 @@ header {
 
 .message:hover .copy-icon {
   opacity: 1;
+}
+
+.message .time {
+  font-size: 0.7rem;
+  font-weight: 600;
+  opacity: 0.4;
 }
 
 .message .media {
