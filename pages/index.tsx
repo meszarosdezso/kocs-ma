@@ -22,7 +22,7 @@ const IndexPage = () => {
     <div id="IndexPage">
       <header>
         <h4 id="date">
-          {today.toString().substring(3, 7)} {today.getDate()}
+          {today.toString()?.substring(3, 7) || ''} {today.getDate()}
         </h4>
 
         <h1 id="title">KocsMa 🍻</h1>
@@ -39,8 +39,8 @@ const IndexPage = () => {
             <span className="time">
               {new Date(msg.timestamp_ms)
                 .toLocaleString()
-                .split(', ')[1]
-                .substring(0, 5)}
+                ?.split(', ')[1]
+                ?.substring(0, 5) || ''}
             </span>
             <h3 className="sender">{msg.sender_name}</h3>
             <p className={msg.content ? 'body' : 'media'}>
